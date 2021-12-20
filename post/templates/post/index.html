@@ -5,13 +5,11 @@
     <body>
         <h1>Latest Bitcoin Price Updates</h1>
 
-        <div>
-            <small>(last updated {{time}})</small>
-            <p>USD: {{usd}}</p>
-            <p>GBP: {{gbp}}</p>
-            <p>EUR: {{eur}}</p>
+        <div id="btc" hx-get="{% url 'home' %}" hx-trigger="every 10s" hx-swap="innerHTML">
+            {% include 'post/partials/bitcoin.html' %}
         </div>
-        
     </body>
+
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
 
 </html>

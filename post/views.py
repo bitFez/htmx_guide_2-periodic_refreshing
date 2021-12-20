@@ -12,4 +12,8 @@ def index(request):
     gbp = data["bpi"]["GBP"]["rate"]
     eur = data["bpi"]["EUR"]["rate"]
     context = {'usd':usd, 'gbp':gbp, 'eur':eur, 'time':time}
-    return render(request, 'post/index.html', context)
+
+    if request.htmx:
+        return render(request, 'post/partials/bitcoin.html', context)
+    else:
+        return render(request, 'post/index.html', context)

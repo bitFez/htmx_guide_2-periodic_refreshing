@@ -1,1 +1,1 @@
-# htmx_guide_2-polling
+# htmx_guide_2-Periodic-Refreshing
